@@ -1,0 +1,38 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: allddd.github.io/headscale-apt
+Label: allddd.github.io/headscale-apt
+Codename: stable
+Date: Sun, 03 Dec 2023 16:04:26 UTC
+Architectures: amd64
+Components: main
+Description: Unofficial Headscale APT repository
+MD5Sum:
+ 7b93bee27c2b66699bff074894182c0c 475 main/binary-amd64/Packages
+ e5f91e44cceb5df4bba333d02a3d0407 349 main/binary-amd64/Packages.gz
+ f3889abed0d057a5417cdb84eba35896 162 main/binary-amd64/Release
+SHA1:
+ 1ec9ed4f32b3eb534c9264c0c05d60162b5e8261 475 main/binary-amd64/Packages
+ 48295385a0ea63bda1cfa40a69998f38367cf48b 349 main/binary-amd64/Packages.gz
+ 0d212112eed97e18c6622e73ce8720296b36bf44 162 main/binary-amd64/Release
+SHA256:
+ 51037aead2a8e4787ac99047e149037f327a5a7ba10e5b1fb71190d8b77bff76 475 main/binary-amd64/Packages
+ a144e6ae4bafa9b3dbb9ccf13cdb313d27c840459ee5506548df7e80727f7e3c 349 main/binary-amd64/Packages.gz
+ 44bfcb6211580774877d9c3dc3201ff11e32813ce6e8a5115cc50d6b0a13d6d7 162 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEENsskK6xmoe/R5m4b8DSd97gLhXgFAmVspwoACgkQ8DSd97gL
+hXhUfA/+OfJVt1qpcoUCyTnfh5nARvQCG7wvfxv6cHal/AhGSZ+J4D2oPTJEoRTn
+rzk5XKItCvITaV0Q7g+9viYjxEcl/gsqi39vXRSskoB3zMV196POOKbQ6XAaQNr6
+5T1p2+prIsuKMAZ6mrfja9ARd2j8X5cxjtGZ1roKqOPuFKvDjfLlcBUkZ0urhmWt
+N8xVuxgPEpopx7c1yrrpFM1IVQLdLDYnChWZscBZ/XHi9eiR2IVwkZeMC3AaEkBE
+H8uAUkSAWisohwlODnBZitmt+QE1Vo0EB0+EzZYTQG6JHMnI8JhGAHOfSB210irH
+zoG4Q75OfUcBbvQnY5Hh1m8zUOBH0QGQlppHB/hDSXmg9eNEwbpBAqI413hqPp53
+DX9xv35BhIn/7VDVo89+cHgl7m4AjWK19TlFeDlrkuWvrBiSscNyqMhxeUqgU6wt
+FesJLFnyPOqr5Zs9R1kzHHhPZMioZ0er0a7wyoJZl4K8n36Fac8VJUPEyCbqEcrl
+XkmVrEL13c/UAB9lsL7y/9dkTfus+BfADNqMjCkUpIPe6JgXbmWgbnuH5pZ295K5
+FWw9GQsPk/xyuS/D0Wa048Ame5MHX7AH8z6munYTxM9SMYf03XReX0bOeCzA9d+w
+PUk7ih2W0rLu01BbX/j//lmVfe8qQ7VdA4Uo/Ve453c+lDRNgIs=
+=1bFu
+-----END PGP SIGNATURE-----

@@ -1,0 +1,5 @@
+Component: main
+Origin: allddd.github.io/headscale-apt
+Label: allddd.github.io/headscale-apt
+Architecture: amd64
+Description: Unofficial Headscale APT repository
