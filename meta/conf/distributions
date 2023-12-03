@@ -1,0 +1,7 @@
+Origin: allddd.github.io/headscale-apt
+Label: allddd.github.io/headscale-apt
+Codename: stable
+Architectures: amd64
+Components: main
+Description: Unofficial Headscale APT repository
+SignWith: 36CB242BAC66A1EFD1E66E1BF0349DF7B80B8578
