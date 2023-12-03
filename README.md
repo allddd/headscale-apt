@@ -1,11 +1,12 @@
 # headscale-apt
 
+[![Release](https://github.com/allddd/headscale-apt/actions/workflows/release.yml/badge.svg)](https://github.com/allddd/headscale-apt/actions/workflows/release.yml)
+
 Unofficial [Headscale](https://headscale.net) repository (Debian/Ubuntu) that automatically checks for updates several times a day.
 
-The code and the repository itself are hosted here.
-I have tried to keep it as simple as possible so that you can audit it yourself in a short amount of time.
+The code and the repository itself are hosted here. I have tried to keep it as simple as possible so that you can audit it yourself in a short amount of time.
 
-## Install
+## Usage
 
 1. Install dependencies
 ```sh
