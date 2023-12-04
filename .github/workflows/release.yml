@@ -9,51 +9,13 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
-    
-    env:
-      CHECK: 0
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Prepare
-        run: chmod +x ./release.sh
-
-      - name: Check for newer versions
-        run: ./release.sh --check || echo 'CHECK=1' >> "${GITHUB_ENV}"
-        shell: bash
-
-      - name: Install
-        if: ${{ env.CHECK == 1 }}
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y reprepro
-
-      - name: Download package
-        if: ${{ env.CHECK == 1 }}
-        run: ./release.sh --get
-        shell: bash
-
-      - name: Verify package
-        if: ${{ env.CHECK == 1 }}
-        run: ./release.sh --verify-hash
-        shell: bash
-
-      - name: Import GPG key
-        if: ${{ env.CHECK == 1 }}
-        run: ./release.sh --gpg
+      - name: Run release.sh
+        run: ./release.sh
         shell: bash
         env:
           GPG_KEY: ${{ secrets.GPG_KEY }}
-
-      - name: Update repository
-        if: ${{ env.CHECK == 1 }}
-        run: ./release.sh --repo
-        shell: bash
-
-      - name: Push
-        if: ${{ env.CHECK == 1 }}
-        run: ./release.sh --push
-        shell: bash
-        env:
           SSH_KEY: ${{ secrets.SSH_KEY }}
