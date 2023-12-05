@@ -1,6 +1,7 @@
 # headscale-apt
 
 [![Release](https://github.com/allddd/headscale-apt/actions/workflows/release.yml/badge.svg)](https://github.com/allddd/headscale-apt/actions/workflows/release.yml)
+[![Test](https://github.com/allddd/headscale-apt/actions/workflows/test.yml/badge.svg)](https://github.com/allddd/headscale-apt/actions/workflows/test.yml)
 
 Unofficial [Headscale](https://headscale.net) repository (Debian/Ubuntu) that automatically updates itself when a new release is available.
 
