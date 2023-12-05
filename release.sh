@@ -18,6 +18,10 @@ else
     exit
 fi
 
+echo 'Installing dependencies...'
+sudo apt-get update
+sudo apt-get install -y reprepro
+
 echo 'Downloading package...'
 PKG_URL=$(echo "${RESPONSE}" | jq -er '.assets[].browser_download_url | match(".*linux_amd64.deb$").string')
 wget -nv "${PKG_URL}"
