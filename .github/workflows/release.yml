@@ -6,6 +6,9 @@ on:
     - cron: '0 */6 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -18,4 +21,3 @@ jobs:
         shell: bash
         env:
           GPG_KEY: ${{ secrets.GPG_KEY }}
-          SSH_KEY: ${{ secrets.SSH_KEY }}

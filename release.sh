@@ -2,8 +2,8 @@
 
 set -eo pipefail
 
-if [[ -z "${GPG_KEY}" || -z "${SSH_KEY}" ]]; then
-    echo 'ERROR: GPG/SSH_KEY is not defined.'
+if [[ -z "${GPG_KEY}" ]]; then
+    echo 'ERROR: GPG_KEY is not defined.'
     exit 1
 fi
 
@@ -42,15 +42,10 @@ mv ./meta/dists ./meta/pool ./
 echo -n "${REMOTE_VER}" > ./VERSION
 
 echo 'Pushing changes...'
-eval "$(ssh-agent -s)"
-echo "${SSH_KEY}" | ssh-add - > /dev/null
-mkdir -p ~/.ssh
-ssh-keyscan github.com > ~/.ssh/known_hosts
-git remote set-url origin 'git@github.com:allddd/headscale-apt.git'
 git config --global user.email '117767298+github-actions[bot]@users.noreply.github.com'
 git config --global user.name 'github-actions[bot]'
 git add dists pool VERSION
 git commit -m "${REMOTE_VER}"
-git push -u origin main
+git push
 
 # vim: ts=4 sw=4 et:
