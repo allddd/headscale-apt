@@ -2,21 +2,14 @@
 
 set -eo pipefail
 
-if [[ -z "${GPG_KEY}" ]]; then
-    echo 'ERROR: GPG_KEY is not defined.'
-    exit 1
-fi
+[[ -n "${GPG_KEY}" ]] || { echo 'GPG_KEY is not defined, exiting...'; exit 1; }
+curl='curl -fs --retry 10 --retry-delay 60 --retry-all-errors'
 
 echo 'Looking for a new release...'
-RESPONSE=$(curl -fs https://api.github.com/repos/juanfont/headscale/releases/latest)
+RESPONSE=$(${curl} https://api.github.com/repos/juanfont/headscale/releases/latest)
 LOCAL_VER=$(cat ./VERSION)
 REMOTE_VER=$(jq -er .tag_name <<< "${RESPONSE}")
-if [[ "${LOCAL_VER}" != "${REMOTE_VER}" ]]; then
-    echo 'New release available.'
-else
-    echo 'No new release, exiting...'
-    exit
-fi
+[[ "${LOCAL_VER}" != "${REMOTE_VER}" ]] || { echo 'No new release, exiting...'; exit; }
 
 echo 'Installing dependencies...'
 sudo apt-get update
@@ -24,11 +17,11 @@ sudo apt-get install -y reprepro
 
 echo 'Downloading package...'
 PKG_URL=$(jq -er '.assets[].browser_download_url | match(".*linux_amd64.deb$").string' <<< "${RESPONSE}")
-wget -nv "${PKG_URL}"
+${curl} -LO "${PKG_URL}"
 
 echo 'Verifying checksum...'
 SUM_URL=$(jq -er '.assets[].browser_download_url | match(".*checksums.txt$").string' <<< "${RESPONSE}")
-curl -fsL "${SUM_URL}" | sha256sum -c --ignore-missing
+${curl} -L "${SUM_URL}" | sha256sum -c --ignore-missing
 
 echo 'Importing GPG key...'
 mkdir -p ~/.gnupg/
