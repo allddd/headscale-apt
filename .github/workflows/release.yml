@@ -16,8 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run release.sh
-        run: ./release.sh
+      - name: Run repo.sh --release
+        run: ./repo.sh --release
         shell: bash
         env:
           GPG_KEY: ${{ secrets.GPG_KEY }}

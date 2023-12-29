@@ -7,6 +7,8 @@ on:
       - main
     paths:
       - VERSION
+  schedule:
+    - cron: '33 9 3 * *'
   workflow_dispatch:
 
 jobs:
@@ -16,27 +18,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Create directory
-        run: sudo install -m 0755 -d /etc/apt/keyrings
-        shell: bash
-
-      - name: Obtain key
-        run: curl -fsSL https://allddd.github.io/headscale-apt/headscale-apt.key | sudo gpg --dearmor -o /etc/apt/keyrings/headscale-apt.gpg
-        shell: bash
-
-      - name: Fix key permissions
-        run: sudo chmod 444 /etc/apt/keyrings/headscale-apt.gpg
-        shell: bash
-
-      - name: Add repository
-        run: echo 'deb [arch=amd64 signed-by=/etc/apt/keyrings/headscale-apt.gpg] https://allddd.github.io/headscale-apt/ stable main' | sudo tee /etc/apt/sources.list.d/headscale-apt.list
-        shell: bash
-
-      - name: Install headscale
-        run: sudo apt-get update && sudo apt-get install -y headscale
-        shell: bash
-
-      - name: Compare versions
-        run: |
-          [[ "$(cat ./VERSION | sed 's/[^0-9.]*//g')" == "$(apt-cache policy headscale | awk '/Installed:/ {print $2}')" ]] || exit 1
+      - name: Run repo.sh --test
+        run: ./repo.sh --test
         shell: bash
