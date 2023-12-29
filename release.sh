@@ -10,7 +10,7 @@ fi
 echo 'Looking for a new release...'
 RESPONSE=$(curl -fs https://api.github.com/repos/juanfont/headscale/releases/latest)
 LOCAL_VER=$(cat ./VERSION)
-REMOTE_VER=$(echo "${RESPONSE}" | jq -er .tag_name)
+REMOTE_VER=$(jq -er .tag_name <<< "${RESPONSE}")
 if [[ "${LOCAL_VER}" != "${REMOTE_VER}" ]]; then
     echo 'New release available.'
 else
@@ -23,16 +23,16 @@ sudo apt-get update
 sudo apt-get install -y reprepro
 
 echo 'Downloading package...'
-PKG_URL=$(echo "${RESPONSE}" | jq -er '.assets[].browser_download_url | match(".*linux_amd64.deb$").string')
+PKG_URL=$(jq -er '.assets[].browser_download_url | match(".*linux_amd64.deb$").string' <<< "${RESPONSE}")
 wget -nv "${PKG_URL}"
 
 echo 'Verifying checksum...'
-SUM_URL=$(echo "${RESPONSE}" | jq -er '.assets[].browser_download_url | match(".*checksums.txt$").string')
+SUM_URL=$(jq -er '.assets[].browser_download_url | match(".*checksums.txt$").string' <<< "${RESPONSE}")
 curl -fsL "${SUM_URL}" | sha256sum -c --ignore-missing
 
 echo 'Importing GPG key...'
 mkdir -p ~/.gnupg/
-echo -n "${GPG_KEY}" | base64 -d > ~/.gnupg/private.key
+base64 -d <<< "${GPG_KEY}" > ~/.gnupg/private.key
 gpg --import ~/.gnupg/private.key
 
 echo 'Updating repository...'
