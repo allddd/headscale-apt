@@ -3,7 +3,7 @@
 set -eo pipefail
 
 [[ -n "${GPG_KEY}" ]] || { echo 'GPG_KEY is not defined, exiting...'; exit 1; }
-curl='curl -fs --retry 10 --retry-delay 60 --retry-all-errors'
+curl='curl -fsS --retry 10 --retry-delay 60 --retry-all-errors'
 
 echo 'Looking for a new release...'
 RESPONSE=$(${curl} https://api.github.com/repos/juanfont/headscale/releases/latest)
