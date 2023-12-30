@@ -6,6 +6,7 @@ _curl='curl -fsS --retry 10 --retry-delay 60 --retry-all-errors'
 
 _release(){
     [[ -n "${GPG_KEY}" ]] || { echo 'ERROR: GPG_KEY variable is not set.'; exit 1; }
+    local RESPONSE REMOTE_VER PKG_URL SUM_URL
     
     echo 'INFO: Comparing local and remote releases...'
     RESPONSE=$(${_curl} https://api.github.com/repos/juanfont/headscale/releases/latest)
