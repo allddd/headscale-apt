@@ -28,9 +28,7 @@ _release() {
     ${CURL} -L "${SUM_URL}" | sha256sum -c --ignore-missing
     
     echo 'INFO: Importing GPG key...'
-    mkdir -p ~/.gnupg/
-    base64 -d <<< "${GPG_KEY}" > ~/.gnupg/private.key
-    gpg --import ~/.gnupg/private.key
+    base64 -d <<< "${GPG_KEY}" | gpg --import
     
     echo 'INFO: Updating repository...'
     reprepro -b ./meta includedeb stable ./*.deb
