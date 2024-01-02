@@ -2,14 +2,14 @@
 
 set -eEo pipefail
 
-_curl='curl -fsS --retry 5 --retry-delay 60 --retry-all-errors'
+CURL='curl -fsS --retry 5 --retry-delay 60 --retry-all-errors'
 
-_release(){
+_release() {
     [[ -n "${GPG_KEY}" ]] || { echo 'ERROR: GPG_KEY variable is not set.'; exit 1; }
     local RESPONSE REMOTE_VER PKG_URL SUM_URL
     
     echo 'INFO: Comparing local and remote releases...'
-    RESPONSE=$(${_curl} https://api.github.com/repos/juanfont/headscale/releases/latest)
+    RESPONSE=$(${CURL} https://api.github.com/repos/juanfont/headscale/releases/latest)
     REMOTE_VER=$(jq -er .tag_name <<< "${RESPONSE}")
     [[ "$(cat ./VERSION)" != "${REMOTE_VER}" ]] || { echo 'INFO: Newer release not available.'; exit; }
     
@@ -21,11 +21,11 @@ _release(){
     
     echo 'INFO: Downloading deb package...'
     PKG_URL=$(jq -er '.assets[].browser_download_url | match(".*linux_amd64.deb$").string' <<< "${RESPONSE}")
-    ${_curl} -LO "${PKG_URL}"
+    ${CURL} -LO "${PKG_URL}"
     
     echo 'INFO: Verifying checksum...'
     SUM_URL=$(jq -er '.assets[].browser_download_url | match(".*checksums.txt$").string' <<< "${RESPONSE}")
-    ${_curl} -L "${SUM_URL}" | sha256sum -c --ignore-missing
+    ${CURL} -L "${SUM_URL}" | sha256sum -c --ignore-missing
     
     echo 'INFO: Importing GPG key...'
     mkdir -p ~/.gnupg/
@@ -55,7 +55,7 @@ _test() {
     sudo install -m 0755 -d ${KEY_DIR}
 
     echo 'INFO: Obtaining GPG key...'
-    ${_curl} ${REPO_URL}${KEY_NAME} | sudo gpg --dearmor -o ${KEY_DIR}/${KEY_NAME}
+    ${CURL} ${REPO_URL}${KEY_NAME} | sudo gpg --dearmor -o ${KEY_DIR}/${KEY_NAME}
 
     echo 'INFO: Fixing permissions...'
     sudo chmod 444 ${KEY_DIR}/${KEY_NAME}
