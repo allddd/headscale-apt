@@ -3,9 +3,7 @@
 [![Release](https://github.com/allddd/headscale-apt/actions/workflows/release.yml/badge.svg)](https://github.com/allddd/headscale-apt/actions/workflows/release.yml)
 [![Test](https://github.com/allddd/headscale-apt/actions/workflows/test.yml/badge.svg)](https://github.com/allddd/headscale-apt/actions/workflows/test.yml)
 
-Unofficial [Headscale](https://headscale.net) repository (Debian/Ubuntu) that automatically updates itself when a new release is available.
-
-The automation code and the repository itself are hosted here. The idea is to keep things as simple as possible so that you can do the audit yourself in no time.
+Unofficial [Headscale](https://headscale.net) repository (Debian/Ubuntu, amd64 only) that automatically updates itself when a new release is available.
 
 ## Usage
 
