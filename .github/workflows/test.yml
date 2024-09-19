@@ -20,4 +20,3 @@ jobs:
 
       - name: Run repo.sh --test
         run: ./repo.sh --test
-        shell: bash

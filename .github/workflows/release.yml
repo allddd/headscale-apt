@@ -18,6 +18,5 @@ jobs:
 
       - name: Run repo.sh --release
         run: ./repo.sh --release
-        shell: bash
         env:
           GPG_KEY: ${{ secrets.GPG_KEY }}
