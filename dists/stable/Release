@@ -1,19 +1,19 @@
 Origin: allddd.github.io/headscale-apt
 Label: allddd.github.io/headscale-apt
 Codename: stable
-Date: Wed, 18 Sep 2024 12:42:38 UTC
+Date: Fri, 17 Jan 2025 12:42:33 UTC
 Architectures: amd64
 Components: main
 Description: Unofficial Headscale APT repository
 MD5Sum:
- 89d008b65413213a64009547871573e0 475 main/binary-amd64/Packages
- 65e3ab3fbeb86a33c4827006cdbf7707 348 main/binary-amd64/Packages.gz
+ 168e1673eee991ac0084f12d83551586 488 main/binary-amd64/Packages
+ 1f4e1960b12bcad2afdab41f4fbd4e34 358 main/binary-amd64/Packages.gz
  f3889abed0d057a5417cdb84eba35896 162 main/binary-amd64/Release
 SHA1:
- c603ad8e7aad19b13b16f26b43b52d132c69844c 475 main/binary-amd64/Packages
- d68b468711425d92fbb9955727070c1173a8f46f 348 main/binary-amd64/Packages.gz
+ 94a5d3bcd5a0f3cad7612de2936aa981f552eadd 488 main/binary-amd64/Packages
+ 9a2f4398b3dbf3c2b6e07e874236707260154614 358 main/binary-amd64/Packages.gz
  0d212112eed97e18c6622e73ce8720296b36bf44 162 main/binary-amd64/Release
 SHA256:
- 57a66d3a9064df41279c1934af8393fe23d11d3be0df39b043b6227a3a8411a5 475 main/binary-amd64/Packages
- 281a671ea26c9453b3113bcf416ebcddda4cfd958d4af4b61e4e12641b7aa993 348 main/binary-amd64/Packages.gz
+ 986ee0eba3e54974c3d3be5969d73e756dbcab19464c3996c02ffac333037824 488 main/binary-amd64/Packages
+ 17f8273613eea740a9632f3e2b47d6aeb358b51b900f05620302b762859def2b 358 main/binary-amd64/Packages.gz
  44bfcb6211580774877d9c3dc3201ff11e32813ce6e8a5115cc50d6b0a13d6d7 162 main/binary-amd64/Release

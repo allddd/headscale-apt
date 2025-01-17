@@ -1,15 +1,16 @@
 Package: headscale
-Version: 0.23.0
+Version: 0.24.0
 Architecture: amd64
+License: BSD
 Maintainer: Kristoffer Dalby <kristoffer@dalby.cc>
-Installed-Size: 50399
+Installed-Size: 51944
 Homepage: https://github.com/juanfont/headscale
 Priority: optional
 Section: 
-Filename: pool/main/h/headscale/headscale_0.23.0_amd64.deb
-Size: 18364402
-SHA256: 3a610d3941de367a57b63b277054e02dee90084d3a6f6112a57709ec5cdd7b75
-SHA1: deb299237383a1a32b9d26c5dfeab2ee127fbdfa
-MD5sum: f299539d3e30d0fdd48c63293a6b01b7
+Filename: pool/main/h/headscale/headscale_0.24.0_amd64.deb
+Size: 18914608
+SHA256: d1ccb10dcfe16f7a0972e8e8a12806aaae4a6e339e661d837a2b628a72d5f25d
+SHA1: c1a4f4a869ae8d3bae99aca74e8f33e3ffac0114
+MD5sum: 0d914c1e1fc174527abab2677301e8a7
 Description: no description given
 
