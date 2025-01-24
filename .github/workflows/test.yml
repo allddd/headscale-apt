@@ -2,13 +2,8 @@
 name: Test
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - VERSION
   schedule:
-    - cron: '33 9 3 * *'
+    - cron: '15 0 * * 2,4,6'
   workflow_dispatch:
 
 jobs:
