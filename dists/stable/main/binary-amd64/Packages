@@ -1,16 +1,20 @@
 Package: headscale
-Version: 0.26.1
+Version: 0.27.0
 Architecture: amd64
-License: BSD
 Maintainer: Kristoffer Dalby <kristoffer@dalby.cc>
-Installed-Size: 58667
+Installed-Size: 56309
 Homepage: https://github.com/juanfont/headscale
 Priority: optional
-Section: 
-Filename: pool/main/h/headscale/headscale_0.26.1_amd64.deb
-Size: 21149318
-SHA256: 7a6f7ec9a35c7b55f8a4bbf3a249a7499fd5ecf41d2f158209f2fe37681f7295
-SHA1: c7d5b27fe55b2042067dc03c8f71790b70fb1b5d
-MD5sum: d9845edcf01953c09979f0281cda9b11
-Description: no description given
+Section: net
+Filename: pool/main/h/headscale/headscale_0.27.0_amd64.deb
+Size: 20994292
+SHA256: b9f1670062f94674782cd3e7682986df946ee2b6ae96ad91dfd1d0eb0ce7516e
+SHA1: d1e0c8038ab10f4b8560e58469ffe4b4d6dd2a17
+MD5sum: 9a54c3a70f189d4618f4a682c7d2ff81
+Description: Open source implementation of the Tailscale control server.
+ Headscale aims to implement a self-hosted, open source alternative to the
+ Tailscale control server. Headscale's goal is to provide self-hosters and
+ hobbyists with an open-source server they can use for their projects and
+ labs. It implements a narrow scope, a single Tailscale network (tailnet),
+ suitable for a personal use, or a small open-source organisation.
 
