@@ -4,35 +4,35 @@ Hash: SHA512
 Origin: allddd.github.io/headscale-apt
 Label: allddd.github.io/headscale-apt
 Codename: stable
-Date: Mon, 27 Oct 2025 13:04:05 UTC
+Date: Wed, 12 Nov 2025 02:03:47 UTC
 Architectures: amd64
 Components: main
 Description: Unofficial Headscale APT repository
 MD5Sum:
- 8ab3668cbc406a14908c51b18fe6bae7 883 main/binary-amd64/Packages
- 96bb74c2dc578c7222ab1bf75775bbee 556 main/binary-amd64/Packages.gz
+ 03d2b0887aeb683d9376c2741dddd845 883 main/binary-amd64/Packages
+ e81d3650aa9492b8eb44a631ebafb709 553 main/binary-amd64/Packages.gz
  f3889abed0d057a5417cdb84eba35896 162 main/binary-amd64/Release
 SHA1:
- 0a1fd93e9c1f21ca51b38296b0f04fde57272fb0 883 main/binary-amd64/Packages
- 33474e38c678d2d7096d5ce8051bbbf2199b578f 556 main/binary-amd64/Packages.gz
+ be495b13b66c3efa8e096afa403cf2bdfea39703 883 main/binary-amd64/Packages
+ f74d089c3f0b41d39d4c690cdf06a36194e1d6c5 553 main/binary-amd64/Packages.gz
  0d212112eed97e18c6622e73ce8720296b36bf44 162 main/binary-amd64/Release
 SHA256:
- 2e1e178db613b9758e143d68ffb7b4aa1257220db964729ed28702c8f4fa6337 883 main/binary-amd64/Packages
- 6df69b29d3a579c4d85f119ad2089a74e5bf222ac8865afaf4b1310f71cbc10e 556 main/binary-amd64/Packages.gz
+ 0ce422cb010092d68547abaee6294e96d9ddfff8d85d273464068288d9bd4a38 883 main/binary-amd64/Packages
+ 2a177dd257f59dacbff3ba31674d9f0b2274e2382644d89f96b7ec5e573f4929 553 main/binary-amd64/Packages.gz
  44bfcb6211580774877d9c3dc3201ff11e32813ce6e8a5115cc50d6b0a13d6d7 162 main/binary-amd64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEENsskK6xmoe/R5m4b8DSd97gLhXgFAmj/bcUACgkQ8DSd97gL
-hXh66g//dISi1FQbGahXgQssMV5mMrqp10hP6zBX53DxJ6zxQYarz+3f/2ABtiY8
-trMKmQutqIAQONAhbJzkUukqx2JFyVkkUlT7gfcGAzTuNA10fw2RtWPUGWMgtJto
-AF3LJRgNohU7PvJOb2ukoHFlvSyGky5u9/xGcpueJypxYVTL60ccLdybRneCMVMv
-BchsJ8TGqceAtaATKQX/TztuAXSmgNFVamujXU3Q5+OOpYRqvliVvaocOE2+WMxN
-5B1CodSAbaYNfWCwTx6kb6Bj8Kh3eVXfeQ93STqm+Ip8Gsk2QLCbhTvf/jyrtioh
-t70y838C2Qqs+hoRBeD96XSCrBBjQ+3WIPSuiIUdXEaS32ELDlVHqlITb6277VOj
-+D2b15vKopizesMLO0sh2KNyq/JXat324ntKqTeMtKPDnwZgriC48pMNRibMqUfN
-X6pYsg1WYwj6xSTRQ5StzXwh60C46IUhcmHHlgST2Vcuouy2tfrVhJ8zkvVa76jz
-4buZwxgtHqX5jVUW7hcKwQ1+QQYEELSIxXYkXAjosJyqYauMsUWwdgbE2Hr/xZMP
-DHgqHMozn6rpjY+ru+Re+8ce4zjCeg0spyHOv9xYiSPDZ1hz3qyHUN+k9RI1RTtV
-tqlkCiCgAmeInqvVsAb8FZAoFU+M++FeSgCnPzpF1+v2b42hrdc=
-=+axm
+iQIzBAEBCgAdFiEENsskK6xmoe/R5m4b8DSd97gLhXgFAmkT6wMACgkQ8DSd97gL
+hXhSgw/9FfHWiGrafyhtfLdbQgCaI4dK9XNCOWaOxfc5Pab92NIROKJHKlapFJk5
+xJKutI1TCEqVByimpIdhSExtsz3A5iVPX3OiMDw2Dw+2b16zoV43x1p2Ztw2huTN
+5fs5t7h4wdZm8V1jMq4eJ/xrGtdmtJmIUj58eFjNbBG5sDAYjiN1KnwSdRTEMgLf
+Qhb5p7RiKRo4lBdY7xUw3Guf2+FEChPiqLm+geSbyU5V9xvNSSRjlVugvq7TIoDY
+QO3SEVulkdC/onwCaqFpu2VaaB99KcVlVwdC2kaQuUEL6qrxjJe/9+arB3CumogY
+wdCkZVUWq4ZiimukXWKlX+NVx9m0ehtlVCGD8QaVEZcudPT9bSohObtGzSgTTXtU
+WsbzxHqFVcwstKRG5BTH2Gpqw9xZYo2pS3wFvuO+uQlXpC8qFPZiV7AXHMORkI7L
+bSH42OWN4fAAh1K678nUx9sI5BOzYnoVRMP8Qk8NbtQiBEIN8SqLZ9VRfZqhbMFd
+Pybt7NdtaavDIOA5xyHn21Lz413kZXKGTp7gGcil5NEWFirZdFHJqYJP4Q5/g2mk
+1ZrXZu/w2QrOKXCB40DBhqdUOZZ1DfFABfaefcvniviuEJHhMIwq/yTU+E2Qtpij
+zDEWQzzEbrH66wRp4yVxxR3RDi9YeMNJhKtY3scMzLe7MfhlKNk=
+=dViI
 -----END PGP SIGNATURE-----
