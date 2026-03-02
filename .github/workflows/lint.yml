@@ -16,7 +16,7 @@ jobs:
     container: koalaman/shellcheck-alpine:stable
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Print shellcheck version
         run: shellcheck --version
@@ -29,7 +29,7 @@ jobs:
     container: mvdan/shfmt:v3-alpine
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Print shfmt version
         run: shfmt --version
