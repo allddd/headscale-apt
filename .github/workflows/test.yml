@@ -13,5 +13,5 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Run repo.sh --test
-        run: ./repo.sh --test
+      - name: Run repo.sh -t
+        run: ./repo.sh -t

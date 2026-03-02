@@ -15,7 +15,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
 
-      - name: Run repo.sh --release
-        run: ./repo.sh --release
+      - name: Run repo.sh -r
+        run: ./repo.sh -r
         env:
           GPG_KEY: ${{ secrets.GPG_KEY }}

@@ -1,106 +1,97 @@
 #!/usr/bin/env bash
 
-set -eEo pipefail
+set -Eeuxo pipefail
 
-CURL='curl -fsS --retry 10 --retry-delay 60 --retry-all-errors'
+ARCHS=('amd64' 'arm64')
+CODENAMES=('stable' 'unstable')
+CURL='curl -sS --fail-with-body --retry-all-errors --retry 10 --retry-delay 60'
 
 _release() {
-    [[ -n ${GPG_KEY} ]] || {
-        echo 'ERROR: GPG_KEY variable is not set.'
-        exit 1
-    }
-    local RESPONSE REMOTE_VER PKG_URL SUM_URL
+	RESPONSE=$(${CURL} 'https://api.github.com/repos/juanfont/headscale/releases')
 
-    echo 'INFO: Comparing local and remote releases...'
-    RESPONSE=$(${CURL} https://api.github.com/repos/juanfont/headscale/releases/latest)
-    REMOTE_VER=$(jq -er .tag_name <<<"${RESPONSE}")
-    [[ "$(cat ./VERSION)" != "${REMOTE_VER}" ]] || {
-        echo 'INFO: Newer release not available.'
-        exit 0
-    }
+	STABLE_LOCAL=$(cat ./STABLE)
+	STABLE_REMOTE=$(jq -er '[.[] | select(.prerelease == false)] | sort_by(.published_at | fromdateiso8601) | reverse | .[0].tag_name' <<<"${RESPONSE}")
+	UNSTABLE_LOCAL=$(cat ./UNSTABLE)
+	UNSTABLE_REMOTE=$(jq -er 'sort_by(.published_at | fromdateiso8601) | reverse | .[0].tag_name' <<<"${RESPONSE}")
+	[[ ${STABLE_LOCAL} != "${STABLE_REMOTE}" || ${UNSTABLE_LOCAL} != "${UNSTABLE_REMOTE}" ]] || exit 0
 
-    echo 'INFO: Updating APT cache...'
-    sudo apt-get update
+	sudo apt-get update
+	sudo apt-get install -y reprepro
 
-    echo 'INFO: Installing reprepro...'
-    sudo apt-get install -y reprepro
+	base64 -d <<<"${GPG_KEY}" | gpg --import
 
-    echo 'INFO: Downloading deb package...'
-    PKG_URL=$(jq -er '.assets[].browser_download_url | match(".*linux_amd64.deb$").string' <<<"${RESPONSE}")
-    ${CURL} -LO "${PKG_URL}"
+	declare -A VERSIONS
+	for CODENAME in "${CODENAMES[@]}"; do
+		LOCAL_VAR="${CODENAME^^}_LOCAL"
+		REMOTE_VAR="${CODENAME^^}_REMOTE"
+		[[ ${!LOCAL_VAR} == "${!REMOTE_VAR}" ]] || VERSIONS["${!REMOTE_VAR}"]+="${CODENAME} "
+	done
 
-    echo 'INFO: Verifying checksum...'
-    SUM_URL=$(jq -er '.assets[].browser_download_url | match(".*checksums.txt$").string' <<<"${RESPONSE}")
-    ${CURL} -L "${SUM_URL}" | sha256sum -c --ignore-missing
+	for VERSION in "${!VERSIONS[@]}"; do
+		${CURL} -LO "$(jq -er --arg v "${VERSION}" '[.[] | select(.tag_name == $v)] | .[0].assets[].browser_download_url | match(".*/checksums.txt$").string' <<<"${RESPONSE}")"
 
-    echo 'INFO: Importing GPG key...'
-    base64 -d <<<"${GPG_KEY}" | gpg --import
+		for ARCH in "${ARCHS[@]}"; do
+			${CURL} -LO "$(jq -er --arg a "${ARCH}" --arg v "${VERSION}" '[.[] | select(.tag_name == $v)] | .[0].assets[].browser_download_url | match(".*linux_" + $a + ".deb$").string' <<<"${RESPONSE}")"
+		done
 
-    echo 'INFO: Updating repository...'
-    reprepro -b ./meta includedeb stable ./*.deb
-    rm -rf ./dists ./pool
-    mv ./meta/dists ./meta/pool ./
-    echo -n "${REMOTE_VER}" >./VERSION
+		sha256sum -c --ignore-missing ./checksums.txt
 
-    echo 'INFO: Pushing changes...'
-    git config --global user.email '117767298+github-actions[bot]@users.noreply.github.com'
-    git config --global user.name 'github-actions[bot]'
-    git add dists pool VERSION
-    git commit -m "${REMOTE_VER}"
-    git push
+		for CODENAME in ${VERSIONS["${VERSION}"]}; do
+			reprepro includedeb "${CODENAME}" ./*.deb
+
+			echo -n "${VERSION}" >"./${CODENAME^^}"
+		done
+
+		rm -f ./*.deb
+	done
+
+	git config --global user.email '117767298+github-actions[bot]@users.noreply.github.com'
+	git config --global user.name 'github-actions[bot]'
+	# shellcheck disable=SC2046
+	git add ./dists ./pool $(printf "./%s " "${CODENAMES[@]^^}")
+	git commit -m "$(for CODENAME in "${CODENAMES[@]}"; do
+		REMOTE_VAR="${CODENAME^^}_REMOTE"
+		printf "%s=%s " "${CODENAME}" "${!REMOTE_VAR}"
+	done)"
+	git push
 }
 
 _test() {
-    local KEY_DIR='/etc/apt/keyrings'
-    local KEY_NAME='headscale-apt.gpg'
-    local REPO_URL='https://allddd.github.io/headscale-apt/'
+	KEY_DIR='/etc/apt/keyrings'
+	KEY_NAME='headscale-apt.gpg'
+	REPO_URL='https://allddd.github.io/headscale-apt/'
 
-    echo 'INFO: Creating keyrings directory...'
-    sudo install -m 0755 -d ${KEY_DIR}
+	sudo mkdir -p "${KEY_DIR}"
 
-    echo 'INFO: Obtaining GPG key...'
-    ${CURL} ${REPO_URL}${KEY_NAME} | sudo gpg --dearmor -o ${KEY_DIR}/${KEY_NAME}
+	${CURL} "${REPO_URL}${KEY_NAME}" | sudo gpg --dearmor -o "${KEY_DIR}/${KEY_NAME}"
 
-    echo 'INFO: Fixing permissions...'
-    sudo chmod 444 ${KEY_DIR}/${KEY_NAME}
+	for CODENAME in "${CODENAMES[@]}"; do
+		sudo tee /etc/apt/sources.list.d/headscale-apt.list <<<"deb [arch=$(dpkg --print-architecture) signed-by=${KEY_DIR}/${KEY_NAME}] ${REPO_URL} ${CODENAME} main"
 
-    echo 'INFO: Adding repository...'
-    sudo tee /etc/apt/sources.list.d/headscale-apt.list <<<"deb [arch=amd64 signed-by=${KEY_DIR}/${KEY_NAME}] ${REPO_URL} stable main"
+		sudo apt-get update
+		sudo apt-get install -y headscale
 
-    echo 'INFO: Updating APT cache...'
-    sudo apt-get update
+		[[ "$(sed 's/[^0-9.]*//g' <"./${CODENAME^^}")" == "$(apt-cache policy headscale | awk '/Installed:/ {print $2}')" ]] || exit 1
 
-    echo 'INFO: Installing headscale...'
-    sudo apt-get install -y headscale
-
-    echo 'INFO: Comparing versions...'
-    [[ "$(sed 's/[^0-9.]*//g' <./VERSION)" == "$(apt-cache policy headscale | awk '/Installed:/ {print $2}')" ]] || {
-        echo 'ERROR: Version mismatch.'
-        exit 1
-    }
+		sudo apt-get purge -y headscale
+	done
 }
 
 _main() {
-    case ${1} in
-        --release)
-            echo 'INFO: Initiating _release...'
-            _release
-            ;;
-        --test)
-            echo 'INFO: Initiating _test...'
-            _test
-            ;;
-        *)
-            echo "ERROR: Option ${1} unrecognized."
-            exit 1
-            ;;
-    esac
+	case ${1} in
+	-r)
+		_release
+		;;
+	-t)
+		_test
+		;;
+	*)
+		exit 1
+		;;
+	esac
 }
 
-[[ -n ${1:-} ]] || {
-    echo 'ERROR: No option specified.'
-    exit 1
-}
+[[ ${#} -eq 1 ]] || exit 1
 _main "${@}"
 
 # vim: ts=4 sw=4 et:
