@@ -35,4 +35,4 @@ jobs:
         run: shfmt --version
 
       - name: Run shfmt
-        run: find ./ -type f -name '*.sh' -print -exec shfmt --diff --simplify --case-indent --indent 4 {} +
+        run: find ./ -type f -name '*.sh' -print -exec shfmt --diff --simplify --indent 4 {} +
