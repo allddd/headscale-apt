@@ -18,7 +18,7 @@ _release() {
         LATEST[$CODENAME]=$(jq -er "${CODENAMES[$CODENAME]}" <<<"${RESPONSE}")
         [[ $(cat "./${CODENAME^^}") == "${LATEST[$CODENAME]}" ]] || OUTDATED["${LATEST[$CODENAME]}"]+="${CODENAME} "
     done
-    [[ ${#OUTDATED[@]} -gt 0 ]] || exit 0
+    [[ -v OUTDATED && ${#OUTDATED[@]} -gt 0 ]] || exit 0
 
     sudo apt-get update
     sudo apt-get install -y reprepro
