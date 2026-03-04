@@ -15,8 +15,8 @@ _release() {
 
     declare -A LATEST OUTDATED
     for CODENAME in "${!CODENAMES[@]}"; do
-        LATEST[$CODENAME]=$(jq -er "${CODENAMES[$CODENAME]}" <<<"${RESPONSE}")
-        [[ $(cat "./${CODENAME^^}") == "${LATEST[$CODENAME]}" ]] || OUTDATED["${LATEST[$CODENAME]}"]+="${CODENAME} "
+        LATEST[${CODENAME}]=$(jq -er "${CODENAMES[${CODENAME}]}" <<<"${RESPONSE}")
+        [[ $(cat "./${CODENAME^^}") == "${LATEST[${CODENAME}]}" ]] || OUTDATED["${LATEST[${CODENAME}]}"]+="${CODENAME} "
     done
     [[ ${!OUTDATED[*]} ]] || exit 0
 
@@ -37,7 +37,7 @@ _release() {
         for CODENAME in ${OUTDATED["${VERSION}"]}; do
             reprepro includedeb "${CODENAME}" ./*.deb
 
-            printf "%s" "${VERSION}" >"./${CODENAME^^}"
+            printf '%s' "${VERSION}" >"./${CODENAME^^}"
         done
 
         rm -f ./*.deb
@@ -46,8 +46,8 @@ _release() {
     git config --global user.email '117767298+github-actions[bot]@users.noreply.github.com'
     git config --global user.name 'github-actions[bot]'
     # shellcheck disable=SC2046
-    git add ./dists ./pool $(for CODENAME in "${!CODENAMES[@]}"; do printf "./%s " "${CODENAME^^}"; done)
-    git commit -m "$(for CODENAME in "${!CODENAMES[@]}"; do printf "%s=%s " "${CODENAME}" "${LATEST[$CODENAME]}"; done)"
+    git add ./dists ./pool $(for CODENAME in "${!CODENAMES[@]}"; do printf './%s ' "${CODENAME^^}"; done)
+    git commit -m "$(for CODENAME in "${!CODENAMES[@]}"; do printf '%s=%s ' "${CODENAME}" "${LATEST[${CODENAME}]}"; done)"
     git push
 }
 
@@ -74,7 +74,7 @@ _test() {
 }
 
 _main() {
-    case ${1} in
+    case "${1}" in
     -r)
         _release
         ;;
