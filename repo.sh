@@ -67,7 +67,7 @@ _test() {
         sudo apt-get update
         sudo apt-get install -y headscale
 
-        [[ "$(sed 's/[^0-9.]*//g' <"./${CODENAME^^}")" == "$(apt-cache policy headscale | awk '/Installed:/ {print $2}')" ]] || exit 1
+        [[ $(<"./${CODENAME^^}") == $(headscale version -o json-line | jq -er '.version') ]] || exit 1
 
         sudo apt-get purge -y headscale
     done
