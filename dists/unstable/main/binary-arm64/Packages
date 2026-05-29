@@ -1,16 +1,16 @@
 Package: headscale
-Version: 0.29.0~beta.1
+Version: 0.29.0~beta.2
 Architecture: arm64
 Maintainer: Kristoffer Dalby <kristoffer@dalby.cc>
 Installed-Size: 47591
 Homepage: https://github.com/juanfont/headscale
 Priority: optional
 Section: net
-Filename: pool/main/h/headscale/headscale_0.29.0~beta.1_arm64.deb
-Size: 18184416
-SHA256: 03a02b63fb65c8e7d2e86fe3c36932928bc1d60d31fc63a66df22bca95413fa3
-SHA1: c4a553bf6689ae20e92d73d95dec072d8b5c8932
-MD5sum: 9bf68c5cdd8d750846362ac6ed8b40d4
+Filename: pool/main/h/headscale/headscale_0.29.0~beta.2_arm64.deb
+Size: 18184690
+SHA256: 7ab4a4fd0fd0b24c40ba89a3f60bba0154585939967655e16bd7d3c9e1b4e9d4
+SHA1: d2b82bee9a825a2eaedf84c5627eacedca8debe2
+MD5sum: fac555c5c911ae29f79d71109d8b69cb
 Description: Open source implementation of the Tailscale control server.
  Headscale aims to implement a self-hosted, open source alternative to the
  Tailscale control server. Headscale's goal is to provide self-hosters and
