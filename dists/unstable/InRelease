@@ -4,44 +4,44 @@ Hash: SHA512
 Origin: allddd.github.io/headscale-apt
 Label: allddd.github.io/headscale-apt
 Codename: unstable
-Date: Fri, 29 May 2026 20:34:52 UTC
+Date: Thu, 11 Jun 2026 16:15:47 UTC
 Architectures: amd64 arm64
 Components: main
 Description: Unofficial Headscale APT repository (unstable)
 MD5Sum:
- 655c338ab9b58bf01912f8dfd504f87b 927 main/binary-amd64/Packages
- 9fa3664b76335dbac13df63073a0f3e8 578 main/binary-amd64/Packages.gz
+ 7acd2d157dae1bbfdaa2449c9213b83f 927 main/binary-amd64/Packages
+ 99ef275b02d56cc87644b6e0b4c621aa 576 main/binary-amd64/Packages.gz
  523a0342c397e7a773193287b879eb7d 173 main/binary-amd64/Release
- 884948ca6ba7a801f190d3e8f2c65796 897 main/binary-arm64/Packages
- 19e85e67871df12559918e86d24a647e 561 main/binary-arm64/Packages.gz
+ b071df4f5c1aaadb2d0fea2a8488f276 897 main/binary-arm64/Packages
+ 61c984708bf8764097204c6980f5426f 561 main/binary-arm64/Packages.gz
  2a919c0dc8b7f918df6f9bab52215e1d 173 main/binary-arm64/Release
 SHA1:
- 3ec4073c75719351e414b1195400b624e1754b9a 927 main/binary-amd64/Packages
- e9723333806eb3b412b9612e7f43a25b702d9586 578 main/binary-amd64/Packages.gz
+ 060e60b73a3321539578e714266a14159b0a5874 927 main/binary-amd64/Packages
+ 10f73b9fd32c632812b04a662fcc18ce0ff6413f 576 main/binary-amd64/Packages.gz
  6a8564db523b5c083afbf26280359e3ce84e1869 173 main/binary-amd64/Release
- f64eae64c5ca1ca4875b71da72579db6c5da0c80 897 main/binary-arm64/Packages
- 3b9918b3fe37806ecc2c14ba29ecacdc7ba4e053 561 main/binary-arm64/Packages.gz
+ e745cb36094ced99a1dc84ea9b416b686fee43d9 897 main/binary-arm64/Packages
+ 05200b34277a279fd2672f0e59a9d490731f9482 561 main/binary-arm64/Packages.gz
  964e9d73a7983809ff00a886d91caa9e57ea4d47 173 main/binary-arm64/Release
 SHA256:
- 9520372d06b067d48f5240a83895eeff8f0fdced57a94b45193445b5f80fdbb1 927 main/binary-amd64/Packages
- beae6a9c4426a120bb8d2c17cde9fd33e21b8d27d015f7bff1144a5635a2fb89 578 main/binary-amd64/Packages.gz
+ a0634e614ee43cf8c0116ede38837b9a72f5f6db90c2f95f466ff491a681e8b4 927 main/binary-amd64/Packages
+ b5aa7ec4697abbd2654d08d38f476363dd456a918ef1dcb0d69a80ad78418f69 576 main/binary-amd64/Packages.gz
  003596dd56e1aef2a00a8b02c2a65d99e6b54d24cee7b64ab95ae6abca892fce 173 main/binary-amd64/Release
- 93e4e043a86c2c772513d420147e7562e6d0254439c5586f32212a5dd9758e43 897 main/binary-arm64/Packages
- 7c5fa8b3008a31578e68de2af39405c4fd81a211e56ea126448567e6f1ebc460 561 main/binary-arm64/Packages.gz
+ 92a991bdcd380d563b92055d9566f447e49e68b6f37add55adfd45f4df78cd04 897 main/binary-arm64/Packages
+ d8aadc7b0d166f93ce33c0573614cb061de15173b820b7ff05c9979676d46835 561 main/binary-arm64/Packages.gz
  c92727ddede0e4eb3b44e856263c7dd32ee9c56a99bb23748bf175fc0fc16e49 173 main/binary-arm64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEENsskK6xmoe/R5m4b8DSd97gLhXgFAmoZ+GwACgkQ8DSd97gL
-hXi/Sw//YX8EdKfVh+CYzOZ7v2QqUiPSCRj8XZiBB/ZCQs+dpeMu45AFHP0XsoMN
-eMKuRd6LS7xU/wEVPlyHuPgryXDwV+ds6cmXFfOftjxQPxLWhwuUF1kURnI1yKRl
-ZsekUE9aAbLvd8mN3/l80jZ96PVuNc0lNG6yvQPaMcWZsl1GQTe4SFsudwe+1IW7
-LiRCqRS8q76ZPrtYGM+ZoDvlzHrqqnWUXc3/aW4PHp/8CD3tio11Y0srxT/ZlxS7
-42hZF4BmUS7kvJR3WLwPASEGUfcverjC9UJG5LYP9Pud05wiHOW1d5FkQWqPQdW0
-diFrPd/tV/Lurwqd98s8HytHtm6iMuUwrYVwVe1z/KQPNU2iaB5TfAf7ptPqdmXM
-SpIn9ynjvAq5evTsQl8ewJqsiNyBXFXGSQr8c+kjsxKH0l+Llk74pKwEM7lsHBRV
-CJ9zmtvcoPEWF8ipSTVxU0yNfwC5AY+ndYjMhr7yNzefSRe47Bubw/FKdcqvulQI
-v/ASjtIxMIVjyUuByBg7lz0TX+kL7QTvPs+d4Yi/Q9MA5sgpD60oRHrJg1dRZ40/
-Ij0R+i48jv3GEmObVjf9yDXtref+JkKrl/60TmYziE+s14G7cqlZAcAZ0tHBWxZs
-0elJPz297/g+v8F8WqV9d1Bb3en203psOTtwVxJ+kmoS6a43NPg=
-=DnyM
+iQIzBAEBCgAdFiEENsskK6xmoe/R5m4b8DSd97gLhXgFAmoq3zMACgkQ8DSd97gL
+hXj0ww//QjXWKuuh2gaKxTiY/xEGv3ko2Vx/mfsFhWIFMToD8MdQAUmQtwCQWRIU
+3CQg/JqnwvSLRBKxGA1tjUyuxNTxxvjKtzBZnCYU5ekHjtL0OlprdC04QKNriHWE
+T2tmhs2iW89muVc/m692kuiDqG6gE16YSGPJ7URUn9IYZRQ2/voBef0v4iEP/Oww
+kBSFC+HC7IHDhU8HGsHyMWI+4V119tOPwfmWnZQu+M/zaQVXH6X7kvmygJYVLpD/
+Df/9nAkdpkXTxsvVDNW9u/9HIk632qEChUY0Ngf11b420MrpPuPbwaUr5miLQ643
+nGhjn1+iXEFLuubdOoOCtFMeYqumoikVxp0uRpe026VEkJre4XbCagJU53wjtT8s
+bPMyRfSNGjgUBK+iHII7++C/YNgJJVBOFIVTV8ku1C74KeExXsWEktO7vFaVPds6
+hKc177qSNozlLZUN0BZ5tFrAHU3ZpN3Eb2GqR6bBm0aBNpBO0h2z3tAwywWfZeW3
+wqrE9fQhIwGhLpjPkFfoJeIGDLPZDyXzenuv5LP67fXY7YI8dsRXp258RcM2uK9M
+PGBLU1cX0fWitv6PX0kco90dxxh0I4ywg/AGicPtZXQch8IOK0b1UcO0EGC/xApE
+TOwerTNWXBH8MrxxFqSJFSXxk2MEiB5ti1vkGqlCnyi/5q8u6vw=
+=/auz
 -----END PGP SIGNATURE-----
