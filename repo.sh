@@ -26,10 +26,10 @@ _release() {
     base64 -d <<<"${GPG_KEY}" | gpg --import
 
     for VERSION in "${!OUTDATED[@]}"; do
-        ${CURL} -LO "$(jq -er --arg v "${VERSION}" '[.[] | select(.tag_name == $v)] | .[0].assets[].browser_download_url | match(".*/checksums.txt$").string' <<<"${RESPONSE}")"
+        ${CURL} -LO "$(jq -er --arg v "${VERSION}" '[.[] | select(.tag_name == $v)] | .[0].assets[].browser_download_url | match(".*/checksums\\.txt$").string' <<<"${RESPONSE}")"
 
         for ARCH in "${ARCHS[@]}"; do
-            ${CURL} -LO "$(jq -er --arg a "${ARCH}" --arg v "${VERSION}" '[.[] | select(.tag_name == $v)] | .[0].assets[].browser_download_url | match(".*linux_" + $a + ".deb$").string' <<<"${RESPONSE}")"
+            ${CURL} -LO "$(jq -er --arg a "${ARCH}" --arg v "${VERSION}" '[.[] | select(.tag_name == $v)] | .[0].assets[].browser_download_url | match(".*linux_" + $a + "\\.deb$").string' <<<"${RESPONSE}")"
         done
 
         sha256sum -c --ignore-missing ./checksums.txt
