@@ -5,8 +5,8 @@ set -Eeuxo pipefail
 CURL=(curl -sS --fail-with-body --retry-all-errors --retry 10 --retry-delay 60 --connect-timeout 15)
 
 declare -A CODENAMES
-CODENAMES['stable']='[.[] | select(.prerelease == false)] | sort_by(.published_at | fromdateiso8601) | reverse | .[0].tag_name'
 CODENAMES['unstable']='sort_by(.published_at | fromdateiso8601) | reverse | .[0].tag_name'
+CODENAMES['stable']='[.[] | select(.prerelease == false)] | '"${CODENAMES['unstable']}"
 
 _release() {
     RESPONSE=$("${CURL[@]}" 'https://api.github.com/repos/juanfont/headscale/releases')
