@@ -2,16 +2,14 @@
 
 set -Eeuxo pipefail
 
-ARCHS=('amd64' 'arm64')
+CURL=(curl -sS --fail-with-body --retry-all-errors --retry 10 --retry-delay 60 --connect-timeout 15)
 
 declare -A CODENAMES
 CODENAMES['stable']='[.[] | select(.prerelease == false)] | sort_by(.published_at | fromdateiso8601) | reverse | .[0].tag_name'
 CODENAMES['unstable']='sort_by(.published_at | fromdateiso8601) | reverse | .[0].tag_name'
 
-CURL='curl -sS --fail-with-body --retry-all-errors --retry 10 --retry-delay 60'
-
 _release() {
-    RESPONSE=$(${CURL} 'https://api.github.com/repos/juanfont/headscale/releases')
+    RESPONSE=$("${CURL[@]}" 'https://api.github.com/repos/juanfont/headscale/releases')
 
     declare -A LATEST OUTDATED
     for CODENAME in "${!CODENAMES[@]}"; do
@@ -26,11 +24,7 @@ _release() {
     base64 -d <<<"${GPG_KEY}" | gpg --import
 
     for VERSION in "${!OUTDATED[@]}"; do
-        ${CURL} -LO "$(jq -er --arg v "${VERSION}" '[.[] | select(.tag_name == $v)] | .[0].assets[].browser_download_url | match(".*/checksums\\.txt$").string' <<<"${RESPONSE}")"
-
-        for ARCH in "${ARCHS[@]}"; do
-            ${CURL} -LO "$(jq -er --arg a "${ARCH}" --arg v "${VERSION}" '[.[] | select(.tag_name == $v)] | .[0].assets[].browser_download_url | match(".*linux_" + $a + "\\.deb$").string' <<<"${RESPONSE}")"
-        done
+        jq -er --arg v "$VERSION" '.[] | select(.tag_name==$v) | .assets[].browser_download_url | select(endswith("/checksums.txt") or test("linux_(amd64|arm64)\\.deb$"))' <<<"${RESPONSE}" | xargs -r -n1 -P0 "${CURL[@]}" -LO
 
         sha256sum -c --ignore-missing ./checksums.txt
 
@@ -58,7 +52,7 @@ _test() {
 
     sudo mkdir -p "${KEY_DIR}"
 
-    ${CURL} "${REPO_URL}${KEY_NAME}" | sudo gpg --dearmor -o "${KEY_DIR}/${KEY_NAME}"
+    "${CURL[@]}" "${REPO_URL}${KEY_NAME}" | sudo gpg --dearmor -o "${KEY_DIR}/${KEY_NAME}"
     sudo chmod 444 "${KEY_DIR}/${KEY_NAME}"
 
     for CODENAME in "${!CODENAMES[@]}"; do
