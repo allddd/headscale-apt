@@ -4,44 +4,44 @@ Hash: SHA512
 Origin: allddd.github.io/headscale-apt
 Label: allddd.github.io/headscale-apt
 Codename: unstable
-Date: Mon, 15 Jun 2026 21:12:51 UTC
+Date: Wed, 17 Jun 2026 11:10:19 UTC
 Architectures: amd64 arm64
 Components: main
 Description: Unofficial Headscale APT repository (unstable)
 MD5Sum:
- 3c4c09dc427464da3a8825559ab5bcb3 927 main/binary-amd64/Packages
- e0be5fef68342458f921aec57a16967c 574 main/binary-amd64/Packages.gz
+ 7ad3e2a338e2617c339c2d6ead0263bf 913 main/binary-amd64/Packages
+ bedfd4ae2d07f4957db45c9ca781a8aa 566 main/binary-amd64/Packages.gz
  523a0342c397e7a773193287b879eb7d 173 main/binary-amd64/Release
- dc680708d731a8e60b6002aa0515b6f1 897 main/binary-arm64/Packages
- ef4020f0a05b8e0d9e8b0d73af6651d4 560 main/binary-arm64/Packages.gz
+ 3cd34489c9c5ac3a04a3a835560ab385 883 main/binary-arm64/Packages
+ 4faf64194937ce374373498b9dcab3c7 553 main/binary-arm64/Packages.gz
  2a919c0dc8b7f918df6f9bab52215e1d 173 main/binary-arm64/Release
 SHA1:
- 64c56886ca0e3dc024ad36be4e2718158d521783 927 main/binary-amd64/Packages
- 10be78e82e1643aafe70989aec370ce51a03b4bd 574 main/binary-amd64/Packages.gz
+ 89eb9d15f7d3abe1661a4cc9e42bc48d66777d78 913 main/binary-amd64/Packages
+ 8f3addd518eac3bdbd53fd78c2102a96b5a3742a 566 main/binary-amd64/Packages.gz
  6a8564db523b5c083afbf26280359e3ce84e1869 173 main/binary-amd64/Release
- d15048c957d0bbf451515060c78d87e33b58ed4f 897 main/binary-arm64/Packages
- c36b9eb80bec210d76421191568930a0cb56e155 560 main/binary-arm64/Packages.gz
+ d2acb1ca6bf7cfd6e73851aaef241845e5da0c7d 883 main/binary-arm64/Packages
+ 2b6068914bd522b71633616f85cb3b02f4792c94 553 main/binary-arm64/Packages.gz
  964e9d73a7983809ff00a886d91caa9e57ea4d47 173 main/binary-arm64/Release
 SHA256:
- 6afa6de9ee15eeb94a0027f1b4a91f793185aa1259bbdac5ddf77829a7e70d04 927 main/binary-amd64/Packages
- 619ca1a8e522814fe692e15ba7cc97b6b1000db31644c4c94d992aa82cfb0b41 574 main/binary-amd64/Packages.gz
+ 551c9e7ef222bbb3e62b9f7acf0ff969eede3475958a1483d0e147419b971449 913 main/binary-amd64/Packages
+ f054fad2662388f440d264b42f36f99e791ce46deafc739dd4f0ea0c10183ee5 566 main/binary-amd64/Packages.gz
  003596dd56e1aef2a00a8b02c2a65d99e6b54d24cee7b64ab95ae6abca892fce 173 main/binary-amd64/Release
- 984f59e48dbbd645ee3f4b9818d3ebc0772f4586b353a23382da2663caf71996 897 main/binary-arm64/Packages
- 9f85f8f78384e472151c4a694242a48279b984646f2fed3924d0e8dc1e829988 560 main/binary-arm64/Packages.gz
+ 47ea676ccc6f028711b8f6537a715d86e6a81e8b242769e568d589ed5e5e215c 883 main/binary-arm64/Packages
+ d0cd59a9ad40152c6e98129641a7d3607278e67d66816f3f5682b8fd46532ce7 553 main/binary-arm64/Packages.gz
  c92727ddede0e4eb3b44e856263c7dd32ee9c56a99bb23748bf175fc0fc16e49 173 main/binary-arm64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEENsskK6xmoe/R5m4b8DSd97gLhXgFAmowatMACgkQ8DSd97gL
-hXhKgQ//RI11V4jyQw5yN9MDHIILKltcUZkIfBo0F1Z+1PP3SzKHoACtIl3ShcbS
-3MPcUn4m82kpppj6913g3SCiiJqqdnTpSNVDji8iJb4dOXjlkvAkm0LeokCW3Kxn
-WBuFd424Xn2qwzLw08r3ndBgSIsmhKmZV+Q8VQ2m0BgbXMk8uY4TKCCjuQOOXUcs
-XT0LaZJwIohFfd477pip6p6/csBVnCpbuFrMPAv6C8zodOcTFLiiVlRzJHremHuM
-9xbvMHVABITvJiYsyXMgz+U1AZNWvIw2dyjHgJ+bIzSmD1OAsqCzuj4DC2Ly6jOn
-qWUe5/oap+VRST5wT8zYJ42zb0M6sWl4e2AcyS0fKRgrApOpQMFf8d7O+p+Ii9U3
-xHsJ/9EEoIwMIi+F65QDVWY+gipYBLIRs/ReknM9wuIFLBY/I7fqKs/2gAinHJ4z
-eAXB5GYwgQ7rIoCXeFIE13G5bMZ5VM47aqjZK1+f1NcayZ7uWlKAq9OUDvSWhVBX
-vKerf6IVRLeUrOohx6vof+ngQ/DfolFeU6rvTcw25NQhGJycv/hqcKName1DUbUn
-sOyRzb6ieUWamkVVWzADKZTJUETXI/mkJD4fUArrnZO2zkCJcxVkjSUy7W+8tDSW
-JujDGZGnegugoTlPOi5GZX8mXjlI76BP8icB+wR1MFnVumIdaKQ=
-=nCDL
+iQIzBAEBCgAdFiEENsskK6xmoe/R5m4b8DSd97gLhXgFAmoygJsACgkQ8DSd97gL
+hXifHw/9HFaPqhGtiaF1vdYl2f1lsJtzdpGZX9ln1c2p0orwjGt5ZS0ph+4mBt6q
+qR+Sw2uTCRAZKSqgw8nechVC3sVmhjZpk80vB2+0cvgeMf6t6pgtt4U8zfP3S01d
+QSAmwv2fsg+t1lNnTAN7YS/RT5yV4s7MDvqQxZ+FL9WPFaxI1Ijdkl39XBstxYgC
+6sRDUiN9IRucBtdAKnG3Wg80Ed+RurLFZV+AnLr5ab2hJD/VDj3MMgOZpWMTiode
+mKx5/2gU2/lodxQ/cMWZKdfF5ibBj+fk95fWbEi0mId2sP1sGPJL9vdWqQMELpau
+LOmZUNT/Wp+zazWZc029/G8gyq4Ch847xPMT6E7ekqx8eL8AXEAbb9I/71FGpSZj
+D4mW2D/nzgcA9ZLhQBwX3kR2I1AyyCJ7VrCoJUsGq/hJsbwFLRZ+bVxcFNsOEhi5
+WX27/olWSVoPCOQ3K1lictpuhArk8zUDCn7KSjbWyCulTf8OLDFtYWFMUd4HRgFL
+UMUnlBS4rzM6kT0rSb4sh1cft3kaNZg4GtmKmccVljyeSv/n8TsGZLd8Fx3b+2N8
+Wf1+aiUgUuOm2n8GHRPx2mw2Bqp4YXYVCH2/Bx4mJZZvw9rySTxdXIxsO29RmNx/
+Av9Af5OVX6KJ1P7kN16sZp0DvDUpANZi8oanX1pe6QCYhRITZTw=
+=fg+9
 -----END PGP SIGNATURE-----
