@@ -40,7 +40,7 @@ _release() {
             printf '%s' "${VERSION}" >"./${CODENAME^^}"
         done
 
-        rm -f ./*.deb
+        rm -f ./checksums.txt ./*.deb
     done
 
     git config --global user.email '117767298+github-actions[bot]@users.noreply.github.com'
