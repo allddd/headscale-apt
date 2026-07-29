@@ -4,44 +4,44 @@ Hash: SHA512
 Origin: allddd.github.io/headscale-apt
 Label: allddd.github.io/headscale-apt
 Codename: stable
-Date: Wed, 01 Jul 2026 20:04:50 UTC
+Date: Wed, 29 Jul 2026 14:24:56 UTC
 Architectures: amd64 arm64
 Components: main
 Description: Unofficial Headscale APT repository (stable)
 MD5Sum:
- 6c3e82bde9edc0fee7c87d08f78355d6 913 main/binary-amd64/Packages
- 9fc08c8b201faba8de7cf32e207e47ea 566 main/binary-amd64/Packages.gz
+ 88e781f362d30b574229501c26685232 913 main/binary-amd64/Packages
+ 670ec0db03efca0b29850058c93a76fb 564 main/binary-amd64/Packages.gz
  7587e311fe9d7ce97103821505c29bef 171 main/binary-amd64/Release
- a3b2ee26a35ed1616aee090d5d711192 883 main/binary-arm64/Packages
- b6417398a4abfe21c67b30470dc56f24 551 main/binary-arm64/Packages.gz
+ 3e5528765f91caa7a07a0cb51ea17aab 883 main/binary-arm64/Packages
+ bbf8e2ad86d1d98ccbf089df69e2179c 555 main/binary-arm64/Packages.gz
  fc05e15beb2b03e5e110ac09f066675c 171 main/binary-arm64/Release
 SHA1:
- 5353fdae619935734688b938cffa57909bb79b3e 913 main/binary-amd64/Packages
- b01d96e5b4811533edc694fa544f643f8d3538e2 566 main/binary-amd64/Packages.gz
+ 8cd92c8ad9be6a25b8f34d11556fb132e6bbf2f7 913 main/binary-amd64/Packages
+ 22a4bf2a5e2104f694126b993b1bc9ca453b6e54 564 main/binary-amd64/Packages.gz
  33a449fe1878a91d026f3fb2363e6d9590ec65e4 171 main/binary-amd64/Release
- 8646ff2076a53a3ab4bc890c87b5f00e475d2e9b 883 main/binary-arm64/Packages
- d0b37992d52b66bcaf358c1be46f60574f64b0b7 551 main/binary-arm64/Packages.gz
+ f87c85fa3f6f1cdc31ea37bd195f379084f47608 883 main/binary-arm64/Packages
+ 945ef5612390fc60e1fdff2bbb5dd2d99f6c99ed 555 main/binary-arm64/Packages.gz
  ae21b6e1726dc0c8f78ba283fe0f91de72606767 171 main/binary-arm64/Release
 SHA256:
- 8b2607435f2397c3368c9de5aba9a6735c9c4db576793fa20235baf3cba89430 913 main/binary-amd64/Packages
- 6aaecf564f9e0f478e9d04c192927592e06fb4582455a81fdb5419e86bbe3fdf 566 main/binary-amd64/Packages.gz
+ 159bc58353c3a05308f401a282fcb342951b8dd2455a9ffbd7192abbaf0d5d70 913 main/binary-amd64/Packages
+ 7db887d163590d3816a96ba2e6ec99a32c174e3963016139774c820f106e963e 564 main/binary-amd64/Packages.gz
  8767d87108e93fd864dacd2b64bfbc9d4c5ce8583df11c2e7207dd327d71482a 171 main/binary-amd64/Release
- f10406b77f566bd9f60b2b026a7f593622a4e320f69feb7c16511c54a0c92bb7 883 main/binary-arm64/Packages
- b309f3a4bfc1b6271629b86293afc972c72ddcb46adfb82ac43226c31e18a4d5 551 main/binary-arm64/Packages.gz
+ c27a0d548f0592659abed11ad3dd11c3589d36c42f0f75208aa337e5c0da86a8 883 main/binary-arm64/Packages
+ bff45b53bda4c07e3222f50503776a2c7820a5fcae70a22e4b4dfd67a12c5572 555 main/binary-arm64/Packages.gz
  b7b8c17d5442f5863855c885e5876f05e9b14fd038e280bdaaa83d21a3bd9290 171 main/binary-arm64/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEENsskK6xmoe/R5m4b8DSd97gLhXgFAmpFcuIACgkQ8DSd97gL
-hXhBWQ/+Kf8vigd1rwwTW4xCeodyaKyysyzsB7GSvPQoDEUVvlUp/YCcWJkS1zNx
-SC7csReF27q37HtGcxZS5OqGQ8WJdnLs78Pzf5gl/1yMdvCdG8NwpvaDJzXIKncX
-8+MxRyA0Xo5biVKIudTeZFPIsCM5VjTXWY68DKsZG3BgaqTFhD8/N2WAwp0ZnaMo
-2SIMY1KUKHBuQvTWIL7EblznT0ph+QUE6Zbl5nDiEmdthmya1E7uJcGULvK9U0MA
-1jCeZe+EH7en64wVAoMlKYPawGoaP2iBGuSWNQTVywvEpv6ERNfOc8NWtuBw7hhi
-xOTEx1ynsP+wNeOW2OutlIXiHdO7psDj5bv2trnW2s1wCBKpxLQ88mTriXCDqPys
-ITMeuYvu4nAi+FTmpMn4a42p7Gr3CiPVgBlHaYaZeYaDkcI/NBa+3EHvO3dqP9Z0
-FMrmCRG/Oh/uC7VYfiJfGF3ANemETXXDdAvlfFWS8X4XoKkruxL5yAh9huFtzD9g
-jkb0xMt4PpwLznWQ4LX1FlR3S281zR2GP1h63M1IWnea3YOEx9XE5VNGRd9iqNak
-40AoZgl6w45h005jKZiXvwrY7EUc3v1hPw4n5vmXNag0ehY9JS6ENzUo2T0zvwx3
-B/59OTOlHzOMOcjkhDDt8Z/mqxRQyDj82i3TkpC2N7kTRMf6exI=
-=B41m
+iQIzBAEBCgAdFiEENsskK6xmoe/R5m4b8DSd97gLhXgFAmpqDTgACgkQ8DSd97gL
+hXjBqg//RwkfJqiy52wL7X3ExUs7+0hJCV4P/MmjEGAPkIZXmfNADE41gx5WUrBU
+pRDodeqccqXGaKAcxup2nohVxzwCIVUHmcrPOldOgiDUP2H0XRCCS6hhwonsp/57
+Z/hIq7WRu/yuE9sZbJY0r028Af50rI018qfcMWz2F2h8oyf75tx1p9pBhAutJPpl
+6hFvyQx4GcN44TakMaeQE9V6l3d8pAsqlukdxSkvCk2LOmsbAcXT8lJKeRqUKBVP
+Pxvcu3SlnhBc0Ne86taVg4rfJmK+6r/NdOmF+tnp4UDdNioNUvZEVPR0gqOLCMky
+VjkeqO7q/v3khTTqwJjR8i7v69NAbDx1qPYDj6moTuqbrw1Ko93M0SVSRN/WE5En
+rI7iwdE43itBmN4a3zE6SFpLxe7FIJk4excLt9UwF2wFIuY7dWNqr9jeBPpq/aOR
+nd3BSmxWeve+Cq7M3bfTJTLFAKk0ssdfFAyFB5MTCVstMHKl810tuUyCG+NaXYw2
+EedjpuEJTao2n8vVcdO/WF/dmW8ZDdGTOyB4ICHC0lqEIOD+k6VRe3R2T2Q37+D5
+voN9RkI2idQCsKeOkJCClSkwhzpHvZFY0lFMIYLK4TwuU5aGc379vUkMPLrcqdp5
+NwdENHmwUCurrYa6VIZFV9RsCPDr51FGJGAjdVKAJY6l+oa0qj8=
+=Eswa
 -----END PGP SIGNATURE-----
