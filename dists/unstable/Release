@@ -1,28 +1,28 @@
 Origin: allddd.github.io/headscale-apt
 Label: allddd.github.io/headscale-apt
 Codename: unstable
-Date: Sat, 24 Oct 2026 10:44:38 UTC
+Date: Fri, 30 Oct 2026 12:38:25 UTC
 Architectures: amd64 arm64
 Components: main
 Description: Unofficial Headscale APT repository (unstable)
 MD5Sum:
- a98e52ab8cc1a0f4c664188c00f32091 913 main/binary-amd64/Packages
- ed061118053afbfe0fcaf0d23e03c95c 564 main/binary-amd64/Packages.gz
+ 3a788f6563de5224ef0705824652ef14 913 main/binary-amd64/Packages
+ 75b8b4027585d64e58dd37e4f5c6cbed 567 main/binary-amd64/Packages.gz
  523a0342c397e7a773193287b879eb7d 173 main/binary-amd64/Release
- 56e2c7b38cfa8c9188db26d97ff6a01c 883 main/binary-arm64/Packages
- 59eb3e4c8cd48f42e3c666fc6fe561f0 553 main/binary-arm64/Packages.gz
+ 45653c352a83f428e62f2094e80f4f08 883 main/binary-arm64/Packages
+ 61edfd592163f9a7ee5115c05ca2bde4 552 main/binary-arm64/Packages.gz
  2a919c0dc8b7f918df6f9bab52215e1d 173 main/binary-arm64/Release
 SHA1:
- 2843f4034dd8252cfd682eee59eed12cc6263b0d 913 main/binary-amd64/Packages
- bd2ded25ce3badf57e9af540e699a61aea15b272 564 main/binary-amd64/Packages.gz
+ d194666dbfeac74617930cda7a2a7e7cce4f885e 913 main/binary-amd64/Packages
+ 2024069e130cd6185ede13992d048934ced04732 567 main/binary-amd64/Packages.gz
  6a8564db523b5c083afbf26280359e3ce84e1869 173 main/binary-amd64/Release
- e31464814665d0ceab75453aee38d7f0261d0355 883 main/binary-arm64/Packages
- c9156dab4016212c538c242e9c56918d72ab5777 553 main/binary-arm64/Packages.gz
+ d83305a2624c69ac2a249d72bfe809fa6970358f 883 main/binary-arm64/Packages
+ b01530567547d7885829d30bee72f1157cef04eb 552 main/binary-arm64/Packages.gz
  964e9d73a7983809ff00a886d91caa9e57ea4d47 173 main/binary-arm64/Release
 SHA256:
- 0ab0aba55bd7f980aa14480f6527c99ff3044bb3b6668f403fc68536e72d1cda 913 main/binary-amd64/Packages
- 8ebc8587a8966c15aeff1545fffcd0883bd6f844482b384dbb27f61621650caa 564 main/binary-amd64/Packages.gz
+ 7b959b57bf285540166180510294cf53aadd32f319ac53f7ac7965d6677b3083 913 main/binary-amd64/Packages
+ e6c59fc0e4ca724261b8bce9871c02fff0b8282361a08b29e567eb5dd9cb3dc4 567 main/binary-amd64/Packages.gz
  003596dd56e1aef2a00a8b02c2a65d99e6b54d24cee7b64ab95ae6abca892fce 173 main/binary-amd64/Release
- a8cee382fa6d8a95a375ff87d0298c4b460cd65b7a22b880e9e6fe3ded7cd31b 883 main/binary-arm64/Packages
- 0255b4a14afbc20b42d6333e14ef8900e367685062dff9a9e9620bc0b8717d3d 553 main/binary-arm64/Packages.gz
+ 0b94f53dd52df684f20413ca5b70ab4fb0228defe28cfeaf188bc8875bf433c6 883 main/binary-arm64/Packages
+ 6d9c0690a74a6e5df17bf52c0b1287ab0fd95890652e7ad7b717597cc273ef82 552 main/binary-arm64/Packages.gz
  c92727ddede0e4eb3b44e856263c7dd32ee9c56a99bb23748bf175fc0fc16e49 173 main/binary-arm64/Release
