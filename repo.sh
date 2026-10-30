@@ -61,7 +61,7 @@ _test() {
         sudo apt-get update
         sudo apt-get install -y headscale
 
-        [[ "$(<"./${CODENAME^^}")" == "$(headscale version -o json-line | jq -er '.version')" ]] || exit 1
+        [[ "$(headscale version -o json-line | jq -er '.version')" =~ ^"$(<"./${CODENAME^^}")"([+]|$) ]] || exit 1
 
         sudo apt-get purge -y headscale
     done
